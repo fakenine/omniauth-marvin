@@ -10,19 +10,15 @@ module OmniAuth
         authorize_path: "v2/oauth/authorize"
       }
 
-      uid { raw_info['id'] }
+      uid do
+        raw_info['id']
+      end
 
       info do
         {
-          email: raw_info["email"]
-          login: raw_info["login"]
+          email: raw_info["email"],
+          login: raw_info["login"],
           name: raw_info["displayname"]
-        }
-      end
-
-      extra do
-        {
-          'raw_info' => raw_info
         }
       end
 
