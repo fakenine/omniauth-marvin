@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'omniauth-marvin', git: "git@github.com:fakenine/omniauth-marvin.git"
+gem 'omniauth-marvin', github: "fakenine/omniauth-marvin"
 ```
 
 ## Usage
