@@ -12,7 +12,17 @@ gem 'omniauth-marvin', github: "fakenine/omniauth-marvin"
 
 ## Usage
 
-TODO: Write usage instructions here
+Register your application on 42's intranet to receive an API Key.
+
+Here's an example for adding the middleware to a Rails app in `config/initializers/omniauth.rb`
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :marvin, ENV["42_ID"], ENV["42_SECRET"]
+end
+```
+
+You can now access the OmniAuth 42 OAuth2 URL: `/auth/marvin`
 
 ## Licence
 
