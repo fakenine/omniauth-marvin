@@ -20,10 +20,10 @@ module OmniAuth
           mobile: raw_info["mobile"],
           name: raw_info["displayname"],
           image: raw_info["image_url"],
-          staff?: raw_info["staff?"]
+          staff?: raw_info["staff?"],
           correction_point: raw_info["correction_point"],
-          wallet: raw_info["wallet"]
-          level: raw_info["level"]
+          wallet: raw_info["wallet"],
+          level: raw_info["level"],
           grade: raw_info["grade"]
         }
       end
