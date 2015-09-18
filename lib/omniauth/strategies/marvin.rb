@@ -16,10 +16,12 @@ module OmniAuth
         {
           email: raw_info["email"],
           login: raw_info["login"],
-          name: raw_info["displayname"],
           url: raw_info["url"],
           mobile: raw_info["mobile"],
-          image: raw_info["image_url"]
+          name: raw_info["displayname"],
+          image: raw_info["image_url"],
+          correction_point: raw_info["correction_point"],
+          wallet: raw_info["wallet"]
         }
       end
 
