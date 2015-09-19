@@ -43,12 +43,12 @@ run `bundle install`
 ```
 rails g devise:install
 rails g devise user
-rails g migration AddLoginToUsers login:string
+rails g migration AddNicknameToUsers nickname:string
 rails g migration AddOmniauthToUsers provider:index uid:index
 rake db:migrate
 ```
 
-You can add any additional migration you want. For instance, mobile, level, wallet...etc.
+You can add any additional migration you want. For instance, phone, level, wallet...etc.
 
 #### Declare the provider
 `config/initializers/devise.rb`
@@ -89,7 +89,7 @@ Example:
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      user.login = auth.info.login
+      user.nickname = auth.info.nickname
       # If your user model has other attributes for which you can get the values via the
       # 42 API, add them here. For instance:
       # user.level = auth.info.level
