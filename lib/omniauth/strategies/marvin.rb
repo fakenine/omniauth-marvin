@@ -14,18 +14,15 @@ module OmniAuth
 
       info do
         {
-          email: raw_info["email"],
-          login: raw_info["login"],
-          url: raw_info["url"],
           name: raw_info["displayname"],
-          mobile: raw_info["mobile"],
+          email: raw_info["email"],
+          nickname: raw_info["login"],
+          location: raw_info["location"],
           image: raw_info["image_url"],
-          staff?: raw_info["staff?"],
-          correction_point: raw_info["correction_point"],
-          wallet: raw_info["wallet"],
-          level: raw_info["cursus"]["level"],
-          grade: raw_info["cursus"]["grade"],
-          location: raw_info["location"]
+          phone: raw_info["mobile"],
+          urls: {
+            "Profile" => raw_info["url"]
+          }
         }
       end
 
