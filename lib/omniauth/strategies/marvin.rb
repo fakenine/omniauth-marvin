@@ -23,8 +23,8 @@ module OmniAuth
           staff?: raw_info["staff?"],
           correction_point: raw_info["correction_point"],
           wallet: raw_info["wallet"],
-          level: raw_info["level"],
-          grade: raw_info["grade"]
+          level: raw_info["cursus"]["level"],
+          grade: raw_info["cursus"]["grade"]
         }
       end
 
