@@ -3,7 +3,7 @@ require "omniauth/strategies/oauth2"
 module OmniAuth
   module Strategies
     class Marvin < OmniAuth::Strategies::OAuth2
-      option :name, :marvin
+      option :name, "marvin"
 
       option :client_options, {
         site: "https://api.intrav2.42.fr",
@@ -14,17 +14,15 @@ module OmniAuth
 
       info do
         {
-          email: raw_info["email"],
-          login: raw_info["login"],
-          url: raw_info["url"],
-          mobile: raw_info["mobile"],
           name: raw_info["displayname"],
+          email: raw_info["email"],
+          nickname: raw_info["login"],
+          location: raw_info["location"],
           image: raw_info["image_url"],
-          staff?: raw_info["staff?"],
-          correction_point: raw_info["correction_point"],
-          wallet: raw_info["wallet"],
-          level: raw_info["level"],
-          grade: raw_info["grade"]
+          phone: raw_info["mobile"],
+          urls: {
+            "Profile" => raw_info["url"]
+          }
         }
       end
 
