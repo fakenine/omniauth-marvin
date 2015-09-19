@@ -17,7 +17,6 @@ module OmniAuth
           email: raw_info["email"],
           login: raw_info["login"],
           url: raw_info["url"],
-          mobile: raw_info["mobile"],
           name: raw_info["displayname"],
           image: raw_info["image_url"],
           staff?: raw_info["staff?"],
