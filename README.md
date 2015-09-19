@@ -1,6 +1,6 @@
 # Omniauth Marvin
 
-42 API OAuth2 strategy for OmniAuth
+OmniAuth OAuth2 strategy for 42 School.
 
 ## Installation
 
@@ -40,10 +40,10 @@ run `bundle install`
 
 #### Generate migrations and models
 
-```ruby
+```
 rails g devise:install
 rails g devise user
-rails g migration add_login_to_users login:string
+rails g migration AddLoginToUsers login:string
 rails g migration AddOmniauthToUsers provider:index uid:index
 rake db:migrate
 ```
@@ -143,13 +143,13 @@ end
 Here's a (very) basic example for login/logout links in the views
 
 ```
-<% if !user_signed_in? %>
   <%= link_to "Sign in with 42", user_omniauth_authorize_path(:marvin) %>
-<% else %>
-  Bonjour, <%= current_user.login %> !<br>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% end %>
 ```
+
+```
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+```
+
 
 #### More info
 
@@ -158,9 +158,7 @@ More info about devise and Omniauth on [their documentation](https://github.com/
 
 ## Auth hash
 
-An example auth hash available in request.env['omniauth.auth']:
-
-`TODO: add auth hash`
+An example of auth hash will be added when the API goes public.
 
 ## Licence
 

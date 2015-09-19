@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Samy KACIMI"]
   spec.email         = ["samy.kacimi@gmail.com"]
 
-  spec.summary       = %q{42 API OAuth2 strategy for OmniAuth}
-  spec.description   = %q{42 API OAuth2 strategy for OmniAuth}
+  spec.summary       = %q{OmniAuth OAuth2 strategy for 42 School}
+  spec.description   = %q{OmniAuth OAuth2 strategy for 42 School}
   spec.homepage      = "https://github.com/fakenine/omniauth-marvin"
   spec.license       = "MIT"
 
