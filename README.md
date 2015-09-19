@@ -38,7 +38,7 @@ gem 'devise'
 
 run `bundle install`
 
-### Generate migrations and models
+#### Generate migrations and models
 
 ```ruby
 rails g devise:install
@@ -50,7 +50,7 @@ rake db:migrate
 
 You can add any additional migration you want. For instance, mobile, level, wallet...etc.
 
-### Declare the provider
+#### Declare the provider
 `config/initializers/devise.rb`
 
 ```ruby
@@ -66,7 +66,7 @@ end
 Don't forget to set the "42_ID" and "42_SECRET" (your app id and secret) in your environment variables.
 
 
-### Make your model omniauthable
+#### Make your model omniauthable
 
 In this case, `app/models/user.rb`
 
@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-### Add the from_omniauth class method to the user model
+#### Add the from_omniauth class method to the user model
 
 `app/models/user.rb`
 
@@ -98,7 +98,7 @@ Example:
   end
 ```
 
-### Implement a callback in the routes
+#### Implement a callback in the routes
 
 `config/routes.rb`
 
@@ -106,7 +106,7 @@ Example:
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 ```
 
-### Create the callbacks controller
+#### Create the callbacks controller
 
 `app/controllers/users/omniauth_callbacks_controller.rb`
 
@@ -128,7 +128,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
-### Add the Sign Out route
+#### Add the Sign Out route
 
 `config/routes.rb`
 
@@ -138,7 +138,7 @@ end
   end
 ```
 
-### Login/logout links
+#### Login/logout links
 
 Here's a (very) basic example for login/logout links in the views
 
@@ -151,10 +151,16 @@ Here's a (very) basic example for login/logout links in the views
 <% end %>
 ```
 
-### More info
+#### More info
 
 This section about devise and Omniauth was written with the help of devise documentation.
 More info about devise and Omniauth on [their documentation](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview "their documentation").
+
+## Auth hash
+
+An example auth hash available in request.env['omniauth.auth']:
+
+`TODO: add auth hash`
 
 ## Licence
 
