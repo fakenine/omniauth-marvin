@@ -57,13 +57,13 @@ You can add any additional migration you want. For instance, phone, level, walle
 Devise.setup do |config|
   .
   .
-  config.omniauth :marvin, ENV["42_ID"], ENV["42_SECRET"]
+  config.omniauth :marvin, ENV["FT_ID"], ENV["FT_SECRET"]
   .
   .
 end
 ```
 
-Don't forget to set the "42_ID" and "42_SECRET" (your app id and secret) in your environment variables.
+Don't forget to set the "FT_ID" and "FT_SECRET" (your app id and secret) in your environment variables.
 
 
 #### Make your model omniauthable
