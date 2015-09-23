@@ -5,8 +5,7 @@ describe OmniAuth::Strategies::Marvin do
   let(:request) { double('Request', :params => {}, :cookies => {}, :env => {}) }
 
   subject do
-    args = ['appid', 'secret', @options || {}].compact
-    OmniAuth::Strategies::Marvin.new(*args).tap do |strategy|
+    OmniAuth::Strategies::Marvin.new('appid', 'secret', @options || {}).tap do |strategy|
       allow(strategy).to receive(:request) {
         request
       }
@@ -14,11 +13,11 @@ describe OmniAuth::Strategies::Marvin do
   end
 
   describe "client options" do
-    it 'has a correct name' do
+    it 'has a valid name' do
       expect(subject.options.name).to eq("marvin")
     end
 
-    it 'has a correct site' do
+    it 'has a valid site' do
       expect(subject.options.client_options.site).to eq("https://api.intrav2.42.fr")
     end
 
