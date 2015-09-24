@@ -13,7 +13,7 @@ describe OmniAuth::Strategies::Marvin do
   end
 
   describe "client options" do
-    it 'has a the correct name' do
+    it 'has the correct name' do
       expect(subject.options.name).to eq("marvin")
     end
 
