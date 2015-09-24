@@ -1,6 +1,6 @@
 # Omniauth Marvin
 
-[![Build Status](https://travis-ci.org/fakenine/omniauth-marvin.svg?branch=master)](https://travis-ci.org/fakenine/omniauth-marvin) [![Code Climate](https://codeclimate.com/repos/5603ccdee30ba01582008c19/badges/acaf7e62ac0c254e87ef/gpa.svg)](https://codeclimate.com/repos/5603ccdee30ba01582008c19/feed)
+[![Build Status](https://travis-ci.org/fakenine/omniauth-marvin.svg?branch=master)](https://travis-ci.org/fakenine/omniauth-marvin) [![Code Climate](https://codeclimate.com/repos/5603ccdee30ba01582008c19/badges/acaf7e62ac0c254e87ef/gpa.svg)](https://codeclimate.com/repos/5603ccdee30ba01582008c19/feed) [![Coverage Status](https://coveralls.io/repos/fakenine/omniauth-marvin/badge.svg?branch=master&service=github)](https://coveralls.io/github/fakenine/omniauth-marvin?branch=master)
 
 OmniAuth OAuth2 strategy for 42 School.
 
