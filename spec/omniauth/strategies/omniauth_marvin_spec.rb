@@ -67,6 +67,12 @@ describe OmniAuth::Strategies::Marvin do
       end
     end
 
+    context 'with correct uid' do
+      it 'returns the uid' do
+        expect(subject.uid).to eq(:raw_info['id'])
+      end
+    end
+
     context 'with correct info' do
       it 'returns the name' do
         expect(subject.info[:name]).to eq(:raw_info['displayname'])
