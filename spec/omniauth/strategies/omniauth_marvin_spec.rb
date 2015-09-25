@@ -32,75 +32,75 @@ describe OmniAuth::Strategies::Marvin do
     end
   end
 
+  describe 'uid' do
+    before :each do
+      allow(subject).to receive(:raw_info) { {} }
+    end
+
+    it 'returns the uid' do
+      expect(subject.uid).to eq(:raw_info['id'])
+    end
+  end
+
   describe 'info' do
     before :each do
       allow(subject).to receive(:raw_info) { {} }
     end
 
-    context 'when valid with the required keys' do
-      it 'has the name key' do
-        expect(subject.info).to have_key :name
-      end
-
-      it 'has the email key' do
-        expect(subject.info).to have_key :email
-      end
-
-      it 'has the nickname key' do
-         expect(subject.info).to have_key :nickname
-      end
-
-      it 'has the location key' do
-        expect(subject.info).to have_key :location
-      end
-
-      it 'has the phone key' do
-        expect(subject.info).to have_key :phone
-      end
-
-      it 'has the image key' do
-        expect(subject.info).to have_key :image
-      end
-
-      it 'has the urls key' do
-        expect(subject.info).to have_key :urls
-      end
+    it 'has the name key' do
+      expect(subject.info).to have_key :name
     end
 
-    context 'with correct uid' do
-      it 'returns the uid' do
-        expect(subject.uid).to eq(:raw_info['id'])
-      end
+    it 'has the email key' do
+      expect(subject.info).to have_key :email
     end
 
-    context 'with correct info' do
-      it 'returns the name' do
-        expect(subject.info[:name]).to eq(:raw_info['displayname'])
-      end
+    it 'has the nickname key' do
+      expect(subject.info).to have_key :nickname
+    end
 
-      it 'returns the email' do
-        expect(subject.info[:email]).to eq(:raw_info['email'])
-      end
+    it 'has the location key' do
+      expect(subject.info).to have_key :location
+    end
 
-      it 'returns the nickname' do
-        expect(subject.info[:nickname]).to eq(:raw_info['login'])
-      end
+    it 'has the phone key' do
+      expect(subject.info).to have_key :phone
+    end
 
-      it 'returns the location' do
-        expect(subject.info[:location]).to eq(:raw_info['location'])
-      end
+    it 'has the image key' do
+      expect(subject.info).to have_key :image
+    end
 
-      it 'returns the phone' do
-        expect(subject.info[:phone]).to eq(:raw_info['mobile'])
-      end
+    it 'has the urls key' do
+      expect(subject.info).to have_key :urls
+    end
 
-      it 'returns the image' do
-        expect(subject.info[:image]).to eq(:raw_info['image'])
-      end
+    it 'returns the name' do
+      expect(subject.info[:name]).to eq(:raw_info['displayname'])
+    end
 
-      it 'returns the profile' do
-        expect(subject.info[:urls]["Profile"]).to eq(:raw_info['url'])
-      end
+    it 'returns the email' do
+      expect(subject.info[:email]).to eq(:raw_info['email'])
+    end
+
+    it 'returns the nickname' do
+      expect(subject.info[:nickname]).to eq(:raw_info['login'])
+    end
+
+    it 'returns the location' do
+      expect(subject.info[:location]).to eq(:raw_info['location'])
+    end
+
+    it 'returns the phone' do
+      expect(subject.info[:phone]).to eq(:raw_info['mobile'])
+    end
+
+    it 'returns the image' do
+      expect(subject.info[:image]).to eq(:raw_info['image'])
+    end
+
+    it 'returns the profile' do
+      expect(subject.info[:urls]["Profile"]).to eq(:raw_info['url'])
     end
   end
 end
