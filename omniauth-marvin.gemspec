@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["samy.kacimi@gmail.com"]
 
   spec.summary       = %q{OmniAuth OAuth2 strategy for 42 School}
-  spec.description   = %q{OmniAuth OAuth2 strategy for 42 School}
+  spec.description   = %q{This gem is an OmniAuth OAuth2 strategy for 42 School. 42 Students can use it to signup/login on their apps.}
   spec.homepage      = "https://github.com/fakenine/omniauth-marvin"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
