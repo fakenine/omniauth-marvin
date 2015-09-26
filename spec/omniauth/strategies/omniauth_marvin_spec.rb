@@ -5,7 +5,7 @@ describe OmniAuth::Strategies::Marvin do
   let(:request) { double('Request', params: {}, cookies: {}, env: {}) }
 
   subject do
-    OmniAuth::Strategies::Marvin.new('appid', 'secret', @options || {}).tap do |strategy|
+    OmniAuth::Strategies::Marvin.new('FT_ID', 'FT_SECRET', @options || {}).tap do |strategy|
       allow(strategy).to receive(:request) {
         request
       }
@@ -73,6 +73,10 @@ describe OmniAuth::Strategies::Marvin do
 
     it 'has the urls key' do
       expect(subject.info).to have_key :urls
+    end
+
+    it 'has the Profile key in urls' do
+      expect(subject.info[:urls]).to have_key "Profile"
     end
 
     it 'returns the name' do
