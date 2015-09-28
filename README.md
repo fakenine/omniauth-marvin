@@ -36,6 +36,8 @@ end
 
 You can now access the OmniAuth 42 OAuth2 URL: `/auth/marvin`
 
+Read the <a href="https://github.com/intridea/omniauth/wiki" target="_blank">Omniauth Wiki</a> or see this <a href="http://railscasts.com/episodes/241-simple-omniauth" target="_blank">RailsCast</a> for an example on how to use this Rack middleware without any other gem.
+
 ## Devise
 
 If you wish to use this gem with devise, do **NOT** use the code snippet above in the Usage section. Instead, follow these steps:
