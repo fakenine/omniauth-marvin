@@ -9,8 +9,8 @@ OmniAuth OAuth2 strategy for 42 School.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'omniauth-marvin', '~> 1.0.0'
-```
+gem 'omniauth-marvin', '~> 1.0.1'
+``
 
 Or, install it yourself like below:
 
