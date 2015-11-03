@@ -6,7 +6,7 @@ module OmniAuth
       option :name, "marvin"
 
       option :client_options, {
-        site: "https://api.intrav2.42.fr",
+        site: "https://api.intra.42.fr",
         authorize_path: "v2/oauth/authorize"
       }
 
