@@ -18,7 +18,7 @@ describe OmniAuth::Strategies::Marvin do
     end
 
     it 'has the correct site' do
-      expect(subject.options.client_options.site).to eq("https://api.intrav2.42.fr")
+      expect(subject.options.client_options.site).to eq("https://api.intrav.42.fr")
     end
 
     it 'has the correct auth url' do
