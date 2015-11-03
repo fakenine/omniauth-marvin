@@ -10,7 +10,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'omniauth-marvin', '~> 1.0.1'
-``
+```
 
 Or, install it yourself like below:
 
