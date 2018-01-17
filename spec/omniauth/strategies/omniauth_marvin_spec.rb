@@ -1,5 +1,5 @@
-require "spec_helper"
-require "omniauth-marvin"
+require 'spec_helper'
+require 'omniauth-marvin'
 
 describe OmniAuth::Strategies::Marvin do
   let(:request) { double('Request', params: {}, cookies: {}, env: {}) }
@@ -14,15 +14,15 @@ describe OmniAuth::Strategies::Marvin do
 
   describe 'client options' do
     it 'has the correct name' do
-      expect(subject.options.name).to eq("marvin")
+      expect(subject.options.name).to eq('marvin')
     end
 
     it 'has the correct site' do
-      expect(subject.options.client_options.site).to eq("https://api.intra.42.fr")
+      expect(subject.options.client_options.site).to eq('https://api.intra.42.fr')
     end
 
     it 'has the correct auth url' do
-      expect(subject.options.client_options.authorize_path).to eq("v2/oauth/authorize")
+      expect(subject.options.client_options.authorize_path).to eq('v2/oauth/authorize')
     end
   end
 
@@ -76,7 +76,7 @@ describe OmniAuth::Strategies::Marvin do
     end
 
     it 'has the Profile key in urls' do
-      expect(subject.info[:urls]).to have_key "Profile"
+      expect(subject.info[:urls]).to have_key 'Profile'
     end
 
     it 'returns the name' do
@@ -104,7 +104,7 @@ describe OmniAuth::Strategies::Marvin do
     end
 
     it 'returns the profile' do
-      expect(subject.info[:urls]["Profile"]).to eq(:raw_info['url'])
+      expect(subject.info[:urls]['Profile']).to eq(:raw_info['url'])
     end
   end
 end

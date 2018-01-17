@@ -1,27 +1,26 @@
-require "omniauth/strategies/oauth2"
+require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
     class Marvin < OmniAuth::Strategies::OAuth2
-      option :name, "marvin"
+      option :name, 'marvin'
 
-      option :client_options, {
-        site: "https://api.intra.42.fr",
-        authorize_path: "v2/oauth/authorize"
-      }
+      option :client_options,
+             site: 'https://api.intra.42.fr',
+             authorize_path: 'v2/oauth/authorize'
 
       uid { raw_info['id'] }
 
       info do
         {
-          name: raw_info["displayname"],
-          email: raw_info["email"],
-          nickname: raw_info["login"],
-          location: raw_info["location"],
-          image: raw_info["image_url"],
-          phone: raw_info["mobile"],
+          name: raw_info['displayname'],
+          email: raw_info['email'],
+          nickname: raw_info['login'],
+          location: raw_info['location'],
+          image: raw_info['image_url'],
+          phone: raw_info['mobile'],
           urls: {
-            "Profile" => raw_info["url"]
+            'Profile' => raw_info['url']
           }
         }
       end
