@@ -1,1 +1,1 @@
-require "omniauth/marvin"
+require 'omniauth/marvin'

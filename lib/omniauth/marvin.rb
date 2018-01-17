@@ -1,2 +1,2 @@
-require "omniauth/marvin/version"
-require "omniauth/strategies/marvin"
+require 'omniauth/marvin/version'
+require 'omniauth/strategies/marvin'
