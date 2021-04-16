@@ -22,7 +22,11 @@ describe OmniAuth::Strategies::Marvin do
     end
 
     it 'has the correct auth url' do
-      expect(subject.options.client_options.authorize_path).to eq('v2/oauth/authorize')
+      expect(subject.options.client_options.authorize_url).to eq('v2/oauth/authorize')
+    end
+
+    it 'has the pkce to true' do
+      expect(subject.options.pkce).to eq(true)
     end
   end
 
@@ -55,16 +59,16 @@ describe OmniAuth::Strategies::Marvin do
       expect(subject.info).to have_key :email
     end
 
-    it 'has the nickname key' do
-      expect(subject.info).to have_key :nickname
+    it 'has the login key' do
+      expect(subject.info).to have_key :login
     end
 
-    it 'has the location key' do
-      expect(subject.info).to have_key :location
+    it 'has the first_name key' do
+      expect(subject.info).to have_key :first_name
     end
 
-    it 'has the phone key' do
-      expect(subject.info).to have_key :phone
+    it 'has the last_name key' do
+      expect(subject.info).to have_key :last_name
     end
 
     it 'has the image key' do
@@ -75,28 +79,28 @@ describe OmniAuth::Strategies::Marvin do
       expect(subject.info).to have_key :urls
     end
 
-    it 'has the Profile key in urls' do
-      expect(subject.info[:urls]).to have_key 'Profile'
-    end
-
-    it 'returns the name' do
-      expect(subject.info[:name]).to eq(:raw_info['displayname'])
+    it 'has the profile key in urls' do
+      expect(subject.info[:urls]).to have_key :profile
     end
 
     it 'returns the email' do
       expect(subject.info[:email]).to eq(:raw_info['email'])
     end
 
-    it 'returns the nickname' do
-      expect(subject.info[:nickname]).to eq(:raw_info['login'])
+    it 'returns the login' do
+      expect(subject.info[:login]).to eq(:raw_info['login'])
     end
 
-    it 'returns the location' do
-      expect(subject.info[:location]).to eq(:raw_info['location'])
+    it 'returns the first_name' do
+      expect(subject.info[:first_name]).to eq(:raw_info['first_name'])
     end
 
-    it 'returns the phone' do
-      expect(subject.info[:phone]).to eq(:raw_info['mobile'])
+    it 'returns the last_name' do
+      expect(subject.info[:last_name]).to eq(:raw_info['last_name'])
+    end
+
+    it 'returns the name with usual_full_name' do
+      expect(subject.info[:name]).to eq(:raw_info['usual_full_name'])
     end
 
     it 'returns the image' do
@@ -104,7 +108,7 @@ describe OmniAuth::Strategies::Marvin do
     end
 
     it 'returns the profile' do
-      expect(subject.info[:urls]['Profile']).to eq(:raw_info['url'])
+      expect(subject.info[:urls][:profile]).to eq(:raw_info['url'])
     end
   end
 end
