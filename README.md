@@ -60,7 +60,7 @@ rails g migration AddLoginToUsers login:string
 rails g migration AddOmniauthToUsers provider:index uid:index
 ```
 
-Before migrating, for this example since we are not going to use trackable, and all the devise module. Then please edit the file created into `app/db/*_devise_create_users`, to only keep:
+Before migrating, for this example since we are not going to use trackable, and all the devise module. Then please edit the file created into `db/*_devise_create_users`, to only keep:
 
 ```
 # frozen_string_literal: true
